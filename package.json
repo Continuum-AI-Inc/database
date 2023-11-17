@@ -2,13 +2,13 @@
   "name": "@continuum-ai/database",
 	"version": "0.0.1",
   "module": "./src/index.ts",
-	"types": "./dist/index.d.ts",
+	"types": "./src/index.d.ts",
   "type": "module",
   "scripts": {
     "db:introspect": "dotenv -- prisma introspect",
-    "db:generate": "dotenv -- prisma generate"
+    "db:generate": "dotenv -- prisma generate",
+		"postinstall": "bunx prisma generate"
   },
-  "postinstall": "tsc && cp src/index.d.ts dist/index.d.ts && bunx prisma generate",
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
